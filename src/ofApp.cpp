@@ -20,10 +20,6 @@ int maxX = 1220; 	//Maximum value for X coordinate
 int minY = 0;		//Minimum value for Y coordinate
 int maxY = 970;		//Maximum value for Y coordinate
 
-
-
-
-
 /*
 Uniform Distribution Numbers
 std::uniform_int_distribution<> unifrmX(minX, maxX);
@@ -36,6 +32,22 @@ for(int i = 0; i < 8; i++)
 
 }*/
 
+
+float meanX = 1000.0;
+float sdX = 15;
+
+float meanY = 800.0;
+float sdY = 15;
+
+std::normal_distribution<float> normX(meanX, sdX);
+std::normal_distribution<float> normY(meanY, sdY);
+
+for(int i = 0; i < 8; i++)
+{
+	X.push_back( normX(eng1) );
+	Y.push_back( normY(eng2) );
+	
+}
 
 
 }
